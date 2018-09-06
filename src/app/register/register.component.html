@@ -22,6 +22,12 @@
           </div>
         </div>
         <div class="row">
+            <div class="input-field col s12" required>
+                <input type="text" name="company" #company="ngModel" [(ngModel)]="user.company">
+                <label data-error="Required field!">Company Name</label>
+            </div>
+        </div>
+        <div class="row">
           <div class="input-field col s6">
             <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="user.firstName">
             <label>First Name</label>
