@@ -18,6 +18,24 @@ export class UserService {
       private http: HttpClient, private apiService: ApiService,
       private _toasterService: ToastrService) {}
 
+
+  getCurrentUser(): User {
+    const userString = localStorage.getItem('currentUser');
+    return JSON.parse(userString);
+  }
+
+  saveCurrentUser(user: User) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  }
+
+  getAccessToken(): string {
+    return localStorage.getItem('userToken');
+  }
+
+  saveAccessToken(token: string) {
+    localStorage.setItem('userToken', token);
+  }
+
   registerUser(user: User) {
     const body = {
       username: user.username,
@@ -46,7 +64,31 @@ export class UserService {
     // return this.http.post(this.rootUrl + 'user/login/', data);
   }
 
-  getUserClaims() {
-    return this.http.get(this.rootUrl + '/api/GetUserClaims');
+  getUserDetails(userId?: string) {
+    // return this.http.get(this.rootUrl + '/api/GetUserClaims');
+    if (userId === undefined) {
+      return this.apiService.get('user/my-profile/');
+    }
+    return this.apiService.get('user/' + userId);
+  }
+
+  getUserFields(userId?: string) {
+    // return this.http.get(this.rootUrl + '/api/GetUserClaims');
+    // if (userId === undefined) {
+    //   return this.apiService.get('user/my-profile/');
+    // }
+    return this.apiService.get('fields/');
+  }
+
+  updateUserProfile(user: User, isCurrentUser: boolean = false) {
+    const data = {
+      email: user.email,
+      first_name: user.firstName,
+      last_name: user.lastName,
+    };
+    if (isCurrentUser) {
+      return this.apiService.put('user/my-profile/', data);
+    }
+    return this.apiService.put('user/' + user.id + '/', data);
   }
 }

@@ -1,9 +1,7 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Response} from '@angular/http';
-import {Http2ServerRequest} from 'http2';
 import {Observable} from 'rxjs';
-
 import {environment} from '../../environments/environment';
 import {Error} from '../models/error.interface';
 
@@ -15,14 +13,10 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  get(url): Observable<Response> {
+  get(url) {
     // Helper service to start ng2-slim-loading-bar progress bar
     // this.helperService.startLoader();
-    return this.http.get(this.rootUrl + url)
-        .tap(response => {
-          return response;
-        })
-        .catch(this.handleError);
+    return this.http.get(this.rootUrl + url);
   }
 
   private handleError(error: Response|any) {
@@ -34,6 +28,11 @@ export class ApiService {
     // this.helperService.startLoader();
 
     return this.http.post(this.rootUrl + url, postBody);
+  }
+
+  put(url, putData) {
+    // this.helperService.startLoader();
+    return this.http.put(this.rootUrl + url, putData);
   }
 
   handleResponse(res: Response): any {
@@ -65,15 +64,7 @@ export class ApiService {
         this.helperService.stopLoader();
       });
   }
-  put(url, putData) {
-    this.helperService.startLoader();
-    return this.http.put(url, putData).map((res: Response) => {
-      return this.handleResponse(res);
-    }).catch((error: Response) => Observable.throw(error))
-      .finally(() => {
-        this.helperService.stopLoader();
-      });
-  }
+
 
 
   upload(url: string, file: File) {

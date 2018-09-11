@@ -1,0 +1,55 @@
+<div class="center-card" *ngIf="currentUser">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h5>My Profile</h5>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="form-container">
+        <div class="username-label">
+          <label matLabel>Username: {{currentUser.username}}</label>
+        </div>
+        <!-- <label>Username: </label>
+                          <label>{{currentUser.username}}</label>
+                          <br> -->
+        <!-- <form class="col s12 primary" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+                            <div class="row">
+                              <label data-error="Invalid email!">Email</label>
+                              <input class="validate" type="text" name="email" #email="ngModel" [(ngModel)]="currentUser.email"
+                                [pattern]="emailPattern">
+                            </div>
+                          </form> -->
+        <form class="my-profile-container" #myProfileForm="ngForm" (ngSubmit)="updateProfile(myProfileForm)">
+          <mat-form-field class="
+            user-input" appearance="standard">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" class="validate" name="email" #email="ngModel" [(ngModel)]="currentUser.email"
+              [pattern]="emailPattern" size="6" required>
+          </mat-form-field>
+          <mat-form-field class="user-input" appearance="standard">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" name="first_name" #first_name="ngModel" [(ngModel)]="currentUser.firstName"
+              required>
+          </mat-form-field>
+          <mat-form-field class="user-input" appearance='standard'>
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" class="validate" name="last_name" #last_name="ngModel" [(ngModel)]="currentUser.lastName"
+              required>
+          </mat-form-field>
+        </form>
+        <!-- <span>Email: {{currentUser.email}}</span> -->
+        <!-- <br>
+                          <span>Full Name: {{currentUser.firstName}} {{currentUser.lastName}}</span>
+                          <br>
+                          <span>Company: {{currentUser.company.name}}</span> -->
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-card-actions id="update-button" align="end">
+        <button mat-button type="submit" (click)="updateProfile(myProfileForm)">UPDATE</button>
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>

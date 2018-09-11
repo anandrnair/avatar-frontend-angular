@@ -1,0 +1,35 @@
+<div class="center-card">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h5>My Profile</h5>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <ul id='field-list-container'>
+        <li *ngFor="let field of fields; let i = index" [attr.data-index]="i">
+          <div class='field-container'>
+
+            <div class='field-input-container'>
+              <mat-label>Field {{i + 1}}</mat-label>
+              <input matInput placeholder="
+                Field Name" class="validate update-input" name="name"
+                #email="ngModel" [(ngModel)]="field.name" required>
+            </div>
+            <div class='update-button'>
+              <button mat-button>Update</button>
+            </div>
+
+          </div>
+
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-card-actions id="update-button" align="end">
+        <!-- <button mat-button type="submit" (click)="updateProfile(myProfileForm)">UPDATE</button> -->
+      </mat-card-actions>
+    </mat-card-footer>
+  </mat-card>
+</div>

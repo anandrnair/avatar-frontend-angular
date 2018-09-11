@@ -1,0 +1,75 @@
+.center-card {
+    /* text-align: center; */
+    /* justify-content: center;
+    align-items: center; */
+    display: inline-block;
+    max-width: 40%;
+    float: left;
+    /* align-self: center; */
+    margin-left: 6.66%;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:45%;
+}
+
+.card-content {
+    /* text-align: center; */
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
+    
+}
+
+.form-container {
+    display: block;
+    flex-direction: column;
+    /* max-width: 75%; */
+    margin-left: auto;
+    margin-right: auto;
+    /* font-family: 'Roboto'; */
+    /* font-size: 14pt; */
+}
+  
+.form-container > * {
+    width: 100%;
+}
+::ng-deep .mat-form-field-underline {
+    display: none;
+    height: 0;
+}
+mat-form-field.mat-form-field {
+    font-size: 14px;
+}
+  
+.mat-input-wrapper{
+    /* width:300px !important; */
+    height: 30px;
+  }
+.user-input {
+    position: relative;
+    width: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+input.mat-input-element {
+    margin-top: -1em;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: -2em;
+    height: 30px;
+
+}
+
+.username-label {
+    margin-top: 10px;
+    /* font-size: 1.25em; */
+}
+.username-label label {
+    font-size: 1.25em;
+    color: black;
+}
+
+#update-button {
+    margin-right: 10px
+}

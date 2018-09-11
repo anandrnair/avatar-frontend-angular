@@ -21,12 +21,14 @@ import {ToolbarComponent} from './toolbar/toolbar.component';
 import {LoginComponent} from './user/login/login.component';
 import {UserComponent} from './user/user.component';
 import { HomeTabComponent } from './home-tab/home-tab.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ManageFieldsComponent } from './manage-fields/manage-fields.component';
 
 @NgModule({
   declarations: [
     AppComponent, HomeComponent, UserComponent, LoginComponent,
     RegisterComponent, NavigationComponent, ToolbarComponent,
-    LoginLayoutComponent, HomeLayoutComponent, SettingsComponent, HomeTabComponent
+    LoginLayoutComponent, HomeLayoutComponent, SettingsComponent, HomeTabComponent, MyProfileComponent, ManageFieldsComponent
   ],
   imports: [
     BrowserModule, FormsModule,

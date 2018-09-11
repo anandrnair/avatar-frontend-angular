@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
                 // this.router.navigate(['/login']);
                 const tokenString = this.tokenResponse.data.token.access_token;
                 if (tokenString != null) {
-                  localStorage.setItem('userToken', tokenString);
+                  this.userService.saveAccessToken(tokenString);
                   this.router.navigate(['/main']);
                 }
                 console.log(

@@ -39,4 +39,8 @@
   .wrapper {
       width: 100%;
   }
+
+  .nav-wrapper {
+    background-color: dodgerblue;
+  }
   

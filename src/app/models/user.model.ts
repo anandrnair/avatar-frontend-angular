@@ -1,8 +1,14 @@
 export class User {
-    username: string;
-    password: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    company: string;
+  id: string;
+  username: string;
+  password: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  company: Company;
+  isCompanyAdmin: boolean;
+}
+
+export class Company {
+  name: String;
 }
