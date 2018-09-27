@@ -77,7 +77,7 @@ export class UserService {
     // if (userId === undefined) {
     //   return this.apiService.get('user/my-profile/');
     // }
-    return this.apiService.get('fields/');
+    return this.apiService.get('company/fields/');
   }
 
   updateUserProfile(user: User, isCurrentUser: boolean = false) {

@@ -12,17 +12,22 @@
           <div class='field-container'>
 
             <div class='field-input-container'>
-              <mat-label>Field {{i + 1}}</mat-label>
-              <input matInput placeholder="
+              <!-- <mat-label>Field {{i + 1}}</mat-label> -->
+              <!-- <input matInput placeholder="
                 Field Name" class="validate update-input" name="name"
-                #email="ngModel" [(ngModel)]="field.name" required>
+                #email="ngModel" [(ngModel)]="field.name" required> -->
+              <br />
+              <mat-label>Display Name: {{field.name}}</mat-label>
+              <br />
+              <mat-label>Parameter Name: {{field.name}}</mat-label>
+              <div class='update-button'>
+                <button mat-button (click)=openDialog()>Update</button>
+              </div>
             </div>
-            <div class='update-button'>
-              <button mat-button>Update</button>
-            </div>
+
 
           </div>
-
+          <mat-divider></mat-divider>
         </li>
       </ul>
     </mat-card-content>

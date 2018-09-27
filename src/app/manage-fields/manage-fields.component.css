@@ -26,15 +26,21 @@
 }
 
 .update-button {
-   
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   display: inline-block;
+   padding-bottom: 0;
+   /* float: right; */
 }
 
 .field-input-container {
     display: inline-block;
     vertical-align: bottom;
-    width: 80%;
+    position: relative;
+    width: 100%;
 }
 .update-input {
     display: inline-block;
-    vertical-align: botton;
+    vertical-align: bottom;
 }
